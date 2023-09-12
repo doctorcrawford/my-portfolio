@@ -10,7 +10,6 @@ import mouseMingle from '../public/mouse-mingle.png';
 
 export default function Home() {
   const [darkMode, setDarkMode] = useState(false);
-  const say = () => console.log('hi')
 
   return (
     <div className={darkMode ? 'dark' : ''}>
