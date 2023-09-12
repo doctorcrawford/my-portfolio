@@ -1,3 +1,6 @@
+'use client';
+import React from 'react';
+import { useState } from 'react';
 import { BsFillMoonStarsFill } from 'react-icons/bs';
 import { AiFillLinkedin, AiFillGithub } from 'react-icons/ai';
 import Image from 'next/image';
@@ -6,15 +9,18 @@ import synesthesia from '../public/synesthesia.png';
 import mouseMingle from '../public/mouse-mingle.png';
 
 export default function Home() {
+  const [darkMode, setDarkMode] = useState(false);
+  const say = () => console.log('hi')
+
   return (
-    <div>
-      <main className='bg-white px-10 md:px-20 lg:px-40'>
+    <div className={darkMode ? 'dark' : ''}>
+      <main className='bg-white dark:bg-gray-900 px-10 md:px-20 lg:px-40'>
         <section className="min-h-screen">
           <nav className='py-10 mb-12 flex justify-between'>
-            <h1 className='text-xl font-burtons'>developedbykyle</h1>
+            <h1 className='text-xl font-burtons'>doctorcrawford</h1>
             <ul className='flex items-center'>
-              <li>
-                <BsFillMoonStarsFill className="cursor-pointer text-2xl" />
+              <li onClick={() => say()}>
+                <BsFillMoonStarsFill onClick={say} className="cursor-pointer text-2xl" />
               </li>
               <li><a className='bg-gradient-to-r from-cyan-500 to-teal-500 text-white px-4 py-2 rounded-md ml-8' href="#">Resume</a></li>
             </ul>
@@ -40,14 +46,14 @@ export default function Home() {
           <div>
             <h3 className='text-3xl py-1'>Portfolio</h3>
             <p className='text-md py-2 leading-8 text-gray-800'>
-              Some projects I've worked on.
+              Some projects I&apos;ve worked on.
             </p>
             <div className='flex flex-col gap-10 py-10 lg:flex-row lg:flex-wrap'>
               <div className='basis-1/3 flex-1'>
-                <Image src={synesthesia} alt='synesthesia' className='rounded-lg object-cover' width={'100%'} height={'100%'} layout='responsive' />
+                <Image src={synesthesia} alt='synesthesia' className='rounded-lg object-cover' width={100} height={100} layout='responsive' />
               </div>
               <div className='basis-1/3 flex-1'>
-                <Image src={mouseMingle} alt='mouse mingle' className='rounded-lg object-cover' width={'100%'} height={'100%'} layout='responsive' />
+                <Image src={mouseMingle} alt='mouse mingle' className='rounded-lg object-cover' width={100} height={100} layout='responsive' />
               </div>
             </div>
           </div>
