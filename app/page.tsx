@@ -1,5 +1,7 @@
 import { BsFillMoonStarsFill } from 'react-icons/bs';
 import { AiFillLinkedin, AiFillGithub } from 'react-icons/ai';
+import Image from 'next/image';
+import kyle from '../public/kyle-headshot.png';
 
 export default function Home() {
   return (
@@ -22,9 +24,13 @@ export default function Home() {
             <p className='text-md py-5 leading-8 text-gray-800'>Full stack software developer, with a foundation in JavaScript, Typescript, React, and C#/.NET. I enjoy playing and producing music, working with my hands and exploring the great outdoors.</p>
           </div>
 
-          <div>
+          <div className='text-5xl flex justify-center gap-16 py-3 text-gray-600'>
             <AiFillLinkedin />
             <AiFillGithub />
+          </div>
+
+          <div className='relative mx-auto bg-gradient-to-b from-teal-500 rounded-full w-80 h-80 mt-20 overflow-hidden'>
+            <Image src={kyle} alt='kyle headshot' layout='fill' objectFit='cover' />
           </div>
         </section>
       </main>
